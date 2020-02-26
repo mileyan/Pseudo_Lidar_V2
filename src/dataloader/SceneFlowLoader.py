@@ -55,7 +55,7 @@ class myImageFloder(data.Dataset):
             calib = self.calib * 0.54
 
         mask = dataL >= 1.
-        dataL[1-mask] = 0
+        dataL[dataL<1.] = 0
         dataL[mask] = calib / np.clip(dataL[mask], 1., None)
         dataL = torch.from_numpy(dataL)
 
