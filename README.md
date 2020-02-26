@@ -164,7 +164,8 @@ We have uploaded the Pseudo-LiDAR clouds trained on only KITTI training set (not
 - [sdn_kitti_train_set](https://drive.google.com/drive/folders/1_G7f8GdzMGkVw95_pAsXZJnYbWtekAPh?usp=sharing): Point Clouds of the SDNet model trained on KITTI training set 
 - [sdn_kitti_train_set_sparse](https://drive.google.com/file/d/1qloBZszzKcuILJc5DxwR2ylFNdilCDbm/view?usp=sharing): Sparse Point Clouds of the SDNet model trained on KITTI training set 
 - [sdn_kitti_train_set_planes](https://drive.google.com/file/d/1gd-p2o7UwDmVEy2o0QDJjs4ZdaoyXSQ1/view?usp=sharing): Planes of the SDNet model trained on KITTI training set 
-
+- [sdn_kitti_train_val_set_sparse](https://drive.google.com/file/d/1B2gP0GGTOARdiA8xoriXa1g9Fy0FTiXY/view?usp=sharing): Sparse Point Clouds of the SDNet model trained on KITTI training+validation sets
+- [sdn_kitti_train_val_set_planes](https://drive.google.com/file/d/1baNwJkZbVS8w15aOmX3Fx20OuUJBEtB5/view?usp=sharing): Planes of the SDNet model trained on KITTI training+validation sets
 
 ## Questions
 Please feel free email us if you have any questions. 
