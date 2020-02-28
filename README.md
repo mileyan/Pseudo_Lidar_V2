@@ -31,7 +31,7 @@ Detecting objects such as cars and pedestrians in 3D plays an indispensable role
 1. Python 3.7
 2. Pytorch 1.0.0
 3. CUDA
-4. `pip install -r ./requirments.txt`
+4. `pip install -r ./requirements.txt`
 5. [SceneFlow](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html)
 5. [KITTI](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)
 
