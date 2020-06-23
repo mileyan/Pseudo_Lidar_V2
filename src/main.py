@@ -171,7 +171,7 @@ def main():
             log.info('[Attention]: Can not find checkpoint {}'.format(args.resume))
 
     if args.generate_depth_map:
-        os.makedirs(args.save_path + '/depth_maps+/' + args.data_tag, exist_ok=True)
+        os.makedirs(args.save_path + '/depth_maps/' + args.data_tag, exist_ok=True)
 
         tqdm_eval_loader = tqdm(TestImgLoader, total=len(TestImgLoader))
         for batch_idx, (imgL_crop, imgR_crop, calib, H, W, filename) in enumerate(tqdm_eval_loader):
