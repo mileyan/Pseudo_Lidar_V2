@@ -90,19 +90,19 @@ We have provided all pretrained models [Pretrained Models](#pretrained-models). 
 The default setting requires four gpus to train. You can use smaller batch sizes which are `btrain` and `bval`, if you don't have enough gpus. 
 #### 1 Train SDNet from Scratch on SceneFlow Dataset
 ```bash
-python ./src/main.py --c sdn_sceneflow.config
+python ./src/main.py -c sdn_sceneflow.config
 ```
 The checkpoints are saved in `./results/sdn_sceneflow/`.
 #### 2 Train SDNet on KITTI Dataset
 ```bash
-python ./src/main.py --c sdn_kitti_train.config \
+python ./src/main.py -c sdn_kitti_train.config \
     --pretrain ./results/sdn_sceneflow/checkpoint.pth.tar --dataset  path-to-KITTI/training/
 ```
 Before running, please change the fakepath `path-to-KITTI/` to the correct one. `--pretrain` is the path to the  pretrained model on SceneFlow. The training results are saved in `./results/sdn_kitti_train_set`.
 
 If you are working on evaluating SDNet on KITTI testing set, you might want to train SDNet on *training+validation* sets. The training results will be saved in `./results/sdn_kitti_trainval_set`.
 ```bash
-python ./src/main.py --c sdn_kitti_train.config \
+python ./src/main.py -c sdn_kitti_train.config \
     --pretrain ./results/sdn_sceneflow/checkpoint.pth.tar \
     --dataset  path-to-KITTI/training/ --split_train ./split/trainval.txt \
     --save_path ./results/sdn_kitti_trainval_set
@@ -112,25 +112,25 @@ Please change the fakepath `path-to-KITTI`. Moreover, if you use the our provide
 
 * a. Using the model trained on KITTI training set, and generating predictions on training + validation sets.
 ```bash
-python ./src/main.py --c sdn_kitti_train.config \
-    --resume ./results/sdn_kitti_train_set/checkpoint.pth.tar --dataset  path-to-KITTI/training/ \
-    --data_list ./split/trainval.txt ----generate_depth_map --data_tag trainval
+python ./src/main.py -c sdn_kitti_train.config \
+    --resume ./results/sdn_kitti_train_set/checkpoint.pth.tar --datapath  path-to-KITTI/training/ \
+    --data_list ./split/trainval.txt --generate_depth_map --data_tag trainval
 ``` 
 The results will be saved in `./results/sdn_kitti_train_set/depth_maps_trainval/`.
 
 * b. Using the model trained on KITTI training + validation set, and generating predictions on training + validation and testing sets. You will use them when you want to submit your results to the leaderboard.
 ```bash
 # training + validation sets
-python ./src/main.py --c sdn_kitti_train.config \
-    --resume ./results/sdn_kitti_trainval_set/checkpoint.pth.tar --dataset  path-to-KITTI/training/ \
-    --data_list=./split/trainval.txt ----generate_depth_map --data_tag trainval
+python ./src/main.py -c sdn_kitti_train.config \
+    --resume ./results/sdn_kitti_trainval_set/checkpoint.pth.tar --datapath  path-to-KITTI/training/ \
+    --data_list=./split/trainval.txt --generate_depth_map --data_tag trainval
 ``` 
 The results will be saved in `./results/sdn_kitti_trainval_set/depth_maps_trainval/`.
 ```bash
 # testing sets
-python ./src/main.py --c sdn_kitti_train.config \
-    --resume ./results/sdn_kitti_trainval_set/checkpoint.pth.tar --dataset  path-to-KITTI/testing/ \
-    --data_list=./split/test.txt ----generate_depth_map --data_tag test
+python ./src/main.py -c sdn_kitti_train.config \
+    --resume ./results/sdn_kitti_trainval_set/checkpoint.pth.tar --datapath  path-to-KITTI/testing/ \
+    --data_list=./split/test.txt --generate_depth_map --data_tag test
 ``` 
 The results will be saved in `./results/sdn_kitti_trainval_set/depth_maps_test/`.
 #### 4 Convert predictions to Pseudo-LiDAR and Planes
