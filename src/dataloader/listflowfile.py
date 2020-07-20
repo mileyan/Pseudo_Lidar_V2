@@ -14,7 +14,7 @@ def is_image_file(filename):
 def dataloader(filepath):
     filepath += '/'
 
-    monkaa_path = filepath + '/monkaa_cleanpass/
+    monkaa_path = filepath + '/monkaa_cleanpass/'
     monkaa_disp = filepath + '/monkaa_disparity/'
 
     monkaa_dir = os.listdir(monkaa_path)
